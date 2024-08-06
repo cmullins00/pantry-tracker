@@ -44,7 +44,6 @@ export default function Home() {
         variant="outlined"
         placeholder="Search..."
         size="small"
-        
       />
       <IconButton type="submit" aria-label="search">
         <SearchIcon style={{ fill: "blue" }} />
@@ -329,7 +328,7 @@ export default function Home() {
         >
           <Typography variant="h2" color="lightgray">Pantry Items</Typography>
         </Box>
-        <Stack width="800px" height="300px" spacing={2} overflow="auto">
+        <Stack width="800px" height="300px" bgcolor="white" spacing={2} overflow="auto">
           {
               filteredInventory.map(({ name, quantity }) => (
                 <Box
