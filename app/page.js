@@ -41,6 +41,7 @@ export default function Home() {
           //filterData(searchQuery);
         }}
         label="Search Inventory"
+        autocomplete="off"
         variant="outlined"
         placeholder="Search..."
         size="small"
@@ -243,7 +244,7 @@ export default function Home() {
           flexDirection="column"
           gap={3}
         >
-          <Typography variant="h4" display="flex" justifyContent={"center"}>Add Item</Typography>
+          <Typography variant="h4" display="flex" justifyContent={"center"} autocomplete="off">Add Item</Typography>
           <Stack width="100%" direction="row" alignItems={"center"} justifyContent={"space-between"} spacing="2px">
             <TextField
               variant="outlined"
