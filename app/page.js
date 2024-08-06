@@ -78,16 +78,16 @@ export default function Home() {
   }
 
   // Helper function to add an item from the inventory
-  const addItem = async (item, quantity) => {
+  const addItem = async (item, num) => {
     const docRef = doc(collection(firestore, 'inventory'), item)
     const docSnap = await getDoc(docRef)
 
     // Check if the item exists
     if (docSnap.exists()) {
-      const { quantity: existingQuantity } = docSnap.data()
-      await setDoc(docRef, { quantity: existingQuantity + quantity })
+      const { quantity } = docSnap.data()
+      await setDoc(docRef, { quantity: quantity + num })
     } else {
-      await setDoc(docRef, { quantity: quantity })
+      await setDoc(docRef, { quantity: num })
     }
 
     await updateInventory()
@@ -351,7 +351,7 @@ export default function Home() {
                     <Stack direction="row" spacing={1}>
                       <Button
                         variant="contained"
-                        onClick={() => addItem(name, quantity)}
+                        onClick={() => addItem(name, 1)}
                       ><AddIcon/></Button>
                       <Button
                         variant="contained"
